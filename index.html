@@ -5,45 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ส่งงาน YouTube</title>
     <style>
-        :root { --primary-color: #ff0000; --bg-color: #f4f4f9; }
-        
-        body { 
-            font-family: 'Segoe UI', Tahoma, sans-serif; 
-            background-color: var(--bg-color); 
-            margin: 0; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh;
+    :root { 
+        --primary-color: #ff0000; 
+        --bg-color: #f0f2f5; 
+    }
+    
+    body { 
+        font-family: 'Kanit', sans-serif; /* ใช้ฟอนต์ภาษาไทยสวยๆ */
+        background-color: var(--bg-color); 
+        margin: 0; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        min-height: 100vh;
 
-            /* --- ใส่ลิงก์รูปภาพของคุณตรงนี้ --- */
-            background-image: url('https://scontent.fbkk25-1.fna.fbcdn.net/v/t1.15752-9/626789124_1486551332994234_1024182792052471222_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_ohc=S1i_ughRbJ4Q7kNvwHpKQtB&_nc_oc=Adk0wZcjqmRo7kKvOGq5aSPQSRRTi2YTMlg4EtSPSllPh6bwsATgTomVrIuZQHIyRq5kQYUlLEIYq0qkrGXYtRG-&_nc_zt=23&_nc_ht=scontent.fbkk25-1.fna&oh=03_Q7cD4gHfiaiL6nfVdppyyvx0yFk-u8mCNZRHGHKQaOfj-UYthA&oe=69C7B24B'), url('https://scontent.fbkk25-1.fna.fbcdn.net/v/t1.15752-9/624007086_3542156775931850_3640748888963490407_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_ohc=vhW_Swhhb44Q7kNvwF65T7R&_nc_oc=Adl2RWo3q4LRerF1iCZ0jLtWkS9Zx7Y31C0t3CrRIOsmeqMEoMkE6DcdoLBKVJjkHwqd2zSBL8vCoI4uRNVOQuhb&_nc_zt=23&_nc_ht=scontent.fbkk25-1.fna&oh=03_Q7cD4gEsqBCvql3zsHJcc4ON_ZAktzkTqV6pJbhWPHX5oaqO8g&oe=69C7C505');
-            background-position: left center, right center;
-            background-repeat: no-repeat;
-            background-size: 50%; /* ปรับขนาดรูปซ้ายขวาตรงนี้ */
-            background-attachment: fixed;
-        }
+        /* --- ใส่ลิงก์รูปภาพซ้าย-ขวา --- */
+        background-image: url('https://scontent.fbkk25-1.fna.fbcdn.net/v/t1.15752-9/626789124_1486551332994234_1024182792052471222_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_ohc=S1i_ughRbJ4Q7kNvwHpKQtB&_nc_oc=Adk0wZcjqmRo7kKvOGq5aSPQSRRTi2YTMlg4EtSPSllPh6bwsATgTomVrIuZQHIyRq5kQYUlLEIYq0qkrGXYtRG-&_nc_zt=23&_nc_ht=scontent.fbkk25-1.fna&oh=03_Q7cD4gHfiaiL6nfVdppyyvx0yFk-u8mCNZRHGHKQaOfj-UYthA&oe=69C7B24B'), 
+                          url('https://scontent.fbkk25-1.fna.fbcdn.net/v/t1.15752-9/624007086_3542156775931850_3640748888963490407_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_ohc=vhW_Swhhb44Q7kNvwF65T7R&_nc_oc=Adl2RWo3q4LRerF1iCZ0jLtWkS9Zx7Y31C0t3CrRIOsmeqMEoMkE6DcdoLBKVJjkHwqd2zSBL8vCoI4uRNVOQuhb&_nc_zt=23&_nc_ht=scontent.fbkk25-1.fna&oh=03_Q7cD4gEsqBCvql3zsHJcc4ON_ZAktzkTqV6pJbhWPHX5oaqO8g&oe=69C7C505');
+        background-position: left 5% center, right 5% center; /* ห่างจากขอบข้างละ 5% */
+        background-repeat: no-repeat;
+        background-size: 10vw; /* ขนาดรูปปรับตามความกว้างหน้าจอ */
+        background-attachment: fixed;
+    }
 
-        /* ซ่อนรูปพื้นหลังเมื่อเปิดในมือถือเพื่อไม่ให้ทับฟอร์ม */
-        @media (max-width: 800px) {
-            body { background-image: none; }
-        }
+    /* ซ่อนรูปบนมือถือเพื่อไม่ให้รก */
+    @media (max-width: 900px) {
+        body { background-image: none; }
+    }
 
-        .container { 
-            background: rgba(255, 255, 255, 0.95); 
-            padding: 2rem; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-            width: 100%; 
-            max-width: 400px;
-            z-index: 10;
-        }
+    .container { 
+        background: white; 
+        padding: 30px; 
+        border-radius: 15px; 
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+        width: 90%; 
+        max-width: 380px;
+        border-top: 5px solid var(--primary-color);
+    }
 
-        h2 { color: var(--primary-color); text-align: center; }
-        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
-        button { width: 100%; padding: 12px; background: var(--primary-color); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
-        #message { text-align: center; margin-top: 10px; display: none; }
-    </style>
+    h2 { color: var(--primary-color); text-align: center; margin-top: 0; }
+    label { font-size: 14px; color: #666; }
+    input { 
+        width: 100%; 
+        padding: 12px; 
+        margin: 8px 0 15px 0; 
+        border: 1px solid #ddd; 
+        border-radius: 8px; 
+        box-sizing: border-box;
+    }
+    button { 
+        width: 100%; 
+        padding: 12px; 
+        background: var(--primary-color); 
+        color: white; 
+        border: none; 
+        border-radius: 8px; 
+        cursor: pointer; 
+        font-size: 16px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    button:hover { background: #b30000; }
+</style>
 </head>
 <body>
 
