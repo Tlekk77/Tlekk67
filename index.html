@@ -5,84 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ส่งงาน YouTube</title>
     <style>
-    :root { 
-        --primary-color: #ff0000; 
-        --bg-color: #f0f2f5; 
-    }
-    
-    body { 
-        font-family: 'Kanit', sans-serif; /* ใช้ฟอนต์ภาษาไทยสวยๆ */
-        background-color: var(--bg-color); 
-        margin: 0; 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        min-height: 100vh;
+        body { 
+            font-family: 'Tahoma', sans-serif; 
+            background-color: #f0f2f5; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh;
 
-        /* --- ใส่ลิงก์รูปภาพซ้าย-ขวา --- */
-        background-image: url('https://scontent.fbkk25-1.fna.fbcdn.net/v/t1.15752-9/626789124_1486551332994234_1024182792052471222_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_ohc=S1i_ughRbJ4Q7kNvwHpKQtB&_nc_oc=Adk0wZcjqmRo7kKvOGq5aSPQSRRTi2YTMlg4EtSPSllPh6bwsATgTomVrIuZQHIyRq5kQYUlLEIYq0qkrGXYtRG-&_nc_zt=23&_nc_ht=scontent.fbkk25-1.fna&oh=03_Q7cD4gHfiaiL6nfVdppyyvx0yFk-u8mCNZRHGHKQaOfj-UYthA&oe=69C7B24B'), 
-                          url('https://scontent.fbkk25-1.fna.fbcdn.net/v/t1.15752-9/624007086_3542156775931850_3640748888963490407_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_ohc=vhW_Swhhb44Q7kNvwF65T7R&_nc_oc=Adl2RWo3q4LRerF1iCZ0jLtWkS9Zx7Y31C0t3CrRIOsmeqMEoMkE6DcdoLBKVJjkHwqd2zSBL8vCoI4uRNVOQuhb&_nc_zt=23&_nc_ht=scontent.fbkk25-1.fna&oh=03_Q7cD4gEsqBCvql3zsHJcc4ON_ZAktzkTqV6pJbhWPHX5oaqO8g&oe=69C7C505');
-        background-position: left 5% center, right 5% center; /* ห่างจากขอบข้างละ 5% */
-        background-repeat: no-repeat;
-        background-size: 10vw; /* ขนาดรูปปรับตามความกว้างหน้าจอ */
-        background-attachment: fixed;
-    }
+            /* --- ใส่ลิงก์รูปภาพของคุณที่นี่ (ต้องขึ้นต้นด้วย https://) --- */
+            background-image: url('https://scontent.fbkk25-1.fna.fbcdn.net/v/t1.15752-9/626789124_1486551332994234_1024182792052471222_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_ohc=S1i_ughRbJ4Q7kNvwHpKQtB&_nc_oc=Adk0wZcjqmRo7kKvOGq5aSPQSRRTi2YTMlg4EtSPSllPh6bwsATgTomVrIuZQHIyRq5kQYUlLEIYq0qkrGXYtRG-&_nc_zt=23&_nc_ht=scontent.fbkk25-1.fna&oh=03_Q7cD4gHfiaiL6nfVdppyyvx0yFk-u8mCNZRHGHKQaOfj-UYthA&oe=69C7B24B'), 
+                              url('https://scontent.fbkk25-1.fna.fbcdn.net/v/t1.15752-9/624007086_3542156775931850_3640748888963490407_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_ohc=vhW_Swhhb44Q7kNvwF65T7R&_nc_oc=Adl2RWo3q4LRerF1iCZ0jLtWkS9Zx7Y31C0t3CrRIOsmeqMEoMkE6DcdoLBKVJjkHwqd2zSBL8vCoI4uRNVOQuhb&_nc_zt=23&_nc_ht=scontent.fbkk25-1.fna&oh=03_Q7cD4gEsqBCvql3zsHJcc4ON_ZAktzkTqV6pJbhWPHX5oaqO8g&oe=69C7C505');
+            
+            /* ตั้งค่าให้รูปอยู่ซ้าย-ล่าง และ ขวา-ล่าง ของจอ */
+            background-position: left 2% bottom 2%, right 2% bottom 2%; 
+            background-repeat: no-repeat;
+            
+            /* ปรับขนาดรูปให้ขึ้นในโทรศัพท์ (25vw คือ 25% ของความกว้างจอ) */
+            background-size: 50vw; 
+            background-attachment: fixed;
+        }
 
-    /* ซ่อนรูปบนมือถือเพื่อไม่ให้รก */
-    @media (max-width: 900px) {
-        body { background-image: none; }
-    }
+        .container { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 25px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+            width: 85%; 
+            max-width: 380px;
+            position: relative;
+            z-index: 10;
+        }
 
-    .container { 
-        background: white; 
-        padding: 30px; 
-        border-radius: 15px; 
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
-        width: 90%; 
-        max-width: 380px;
-        border-top: 5px solid var(--primary-color);
-    }
-
-    h2 { color: var(--primary-color); text-align: center; margin-top: 0; }
-    label { font-size: 14px; color: #666; }
-    input { 
-        width: 100%; 
-        padding: 12px; 
-        margin: 8px 0 15px 0; 
-        border: 1px solid #ddd; 
-        border-radius: 8px; 
-        box-sizing: border-box;
-    }
-    button { 
-        width: 100%; 
-        padding: 12px; 
-        background: var(--primary-color); 
-        color: white; 
-        border: none; 
-        border-radius: 8px; 
-        cursor: pointer; 
-        font-size: 16px;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-    button:hover { background: #b30000; }
-</style>
+        h2 { color: #ff0000; text-align: center; margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; }
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 15px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            box-sizing: border-box; 
+            font-size: 16px; 
+        }
+        button { 
+            width: 100%; 
+            padding: 12px; 
+            background: #ff0000; 
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            font-size: 16px; 
+        }
+        #message { text-align: center; margin-top: 15px; font-weight: bold; display: none; }
+    </style>
 </head>
 <body>
 
 <div class="container">
     <h2>🚀 ส่งงาน YouTube</h2>
     <form id="submission-form">
-        <input type="number" name="studentNo" placeholder="เลขที่" required>
-        <input type="text" name="name" placeholder="ชื่อ-นามสกุล" required>
-        <input type="url" name="youtubeLink" placeholder="ลิงก์ YouTube" required>
+        <label>เลขที่</label>
+        <input type="number" name="studentNo" placeholder="ตัวอย่าง: 10" required>
+
+        <label>ชื่อ-นามสกุล</label>
+        <input type="text" name="name" placeholder="ชื่อของคุณ" required>
+
+        <label>ลิงก์ YouTube</label>
+        <input type="url" name="youtubeLink" placeholder="https://..." required>
+
         <button type="submit" id="submit-btn">ส่งข้อมูล</button>
     </form>
     <div id="message"></div>
 </div>
 
 <script>
-    // อย่าลืมเอาลิงก์จาก New Deployment มาวางตรงนี้
+    // วางลิงก์ Web App URL ที่ได้จาก Google Apps Script
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyCFNW9gRu40WXcOgmGFJHBzfak-rGgh8PKp3FT-p6bmxyiUoDqN3SApZv6hu3A63gb5Q/exec';
     const form = document.getElementById('submission-form');
     const btn = document.getElementById('submit-btn');
@@ -92,18 +93,22 @@
         e.preventDefault();
         btn.disabled = true;
         msg.style.display = 'block';
-        msg.innerText = '⏳ กำลังบันทึกตามเลขที่...';
+        msg.style.color = 'blue';
+        msg.innerText = '⏳ กำลังบันทึกลงแถวตามเลขที่...';
 
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
-                alert('เด็กเอ๋อส่งงานแล้วจ้าา67');
+                alert('ส่งงานเรียบร้อยแล้ว!');
                 msg.innerText = '✅ บันทึกสำเร็จ!';
+                msg.style.color = 'green';
                 btn.disabled = false;
                 form.reset();
             })
             .catch(error => {
-                alert('เกิดข้อผิดพลาด');
+                alert('เกิดข้อผิดพลาดในการเชื่อมต่อ');
                 btn.disabled = false;
+                msg.innerText = '❌ เกิดข้อผิดพลาด';
+                msg.style.color = 'red';
             });
     });
 </script>
