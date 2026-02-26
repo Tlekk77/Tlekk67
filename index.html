@@ -3,55 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ส่งงานวิดีโอ YouTube</title>
+    <title>ส่งงาน YouTube</title>
     <style>
         :root { --primary-color: #ff0000; --bg-color: #f4f4f9; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .container { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; padding-bottom: 3rem; }
-        h2 { color: var(--primary-color); text-align: center; margin-bottom: 1.5rem; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
-        input { width: 100%; padding: 12px; margin-bottom: 1.2rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 16px; }
-        button { width: 100%; padding: 12px; background-color: var(--primary-color); color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
-        button:hover { background-color: #cc0000; }
-        #message { text-align: center; margin-top: 1rem; font-size: 14px; display: none; font-weight: bold; }
-    :root { 
-        --primary-color: #ff0000; 
-        --bg-color: #f4f4f9; 
-    }
-    
-    body { 
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        background-color: var(--bg-color); 
-        margin: 0;
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        min-height: 100vh;
         
-        /* --- ส่วนที่เพิ่มรูปซ้าย-ขวา --- */
-        background-image: url('https://scontent.fbkk25-1.fna.fbcdn.net/v/t1.15752-9/626789124_1486551332994234_1024182792052471222_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_ohc=S1i_ughRbJ4Q7kNvwHpKQtB&_nc_oc=Adk0wZcjqmRo7kKvOGq5aSPQSRRTi2YTMlg4EtSPSllPh6bwsATgTomVrIuZQHIyRq5kQYUlLEIYq0qkrGXYtRG-&_nc_zt=23&_nc_ht=scontent.fbkk25-1.fna&oh=03_Q7cD4gHfiaiL6nfVdppyyvx0yFk-u8mCNZRHGHKQaOfj-UYthA&oe=69C7B24B'), url('https://scontent.fbkk25-1.fna.fbcdn.net/v/t1.15752-9/624007086_3542156775931850_3640748888963490407_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_ohc=vhW_Swhhb44Q7kNvwF65T7R&_nc_oc=Adl2RWo3q4LRerF1iCZ0jLtWkS9Zx7Y31C0t3CrRIOsmeqMEoMkE6DcdoLBKVJjkHwqd2zSBL8vCoI4uRNVOQuhb&_nc_zt=23&_nc_ht=scontent.fbkk25-1.fna&oh=03_Q7cD4gEsqBCvql3zsHJcc4ON_ZAktzkTqV6pJbhWPHX5oaqO8g&oe=69C7C505');
-        background-position: left center, right center; /* วางซ้ายและขวาตรงกลางแนวตั้ง */
-        background-repeat: no-repeat, no-repeat;        /* ไม่ให้รูปซ้ำ */
-        background-size: 20%;                           /* ปรับขนาดรูป (เปลี่ยนเลข % ได้) */
-        background-attachment: fixed;                    /* ให้รูปอยู่กับที่เวลาเลื่อนจอ */
-    }
+        body { 
+            font-family: 'Segoe UI', Tahoma, sans-serif; 
+            background-color: var(--bg-color); 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh;
 
-    /* สำหรับมือถือ ให้ซ่อนรูปพื้นหลังเพื่อไม่ให้บังฟอร์ม */
-    @media (max-width: 768px) {
-        body { background-image: none; }
-    }
+            /* --- ใส่ลิงก์รูปภาพของคุณตรงนี้ --- */
+            background-image: url('ใส่ลิงก์รูปซ้าย'), url('ใส่ลิงก์รูปขวา');
+            background-position: left center, right center;
+            background-repeat: no-repeat;
+            background-size: 15%; /* ปรับขนาดรูปซ้ายขวาตรงนี้ */
+            background-attachment: fixed;
+        }
 
-    .container { 
-        background: rgba(255, 255, 255, 0.95); /* ทำให้โปร่งแสงนิดๆ ให้เห็นพื้นหลัง */
-        padding: 2rem; 
-        border-radius: 12px; 
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-        width: 100%; 
-        max-width: 400px; 
-        position: relative;
-        z-index: 1;
-    }
-    /* ...โค้ดส่วนอื่นเหมือนเดิม... */
+        /* ซ่อนรูปพื้นหลังเมื่อเปิดในมือถือเพื่อไม่ให้ทับฟอร์ม */
+        @media (max-width: 800px) {
+            body { background-image: none; }
+        }
+
+        .container { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 2rem; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            width: 100%; 
+            max-width: 400px;
+            z-index: 10;
+        }
+
+        h2 { color: var(--primary-color); text-align: center; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: var(--primary-color); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        #message { text-align: center; margin-top: 10px; display: none; }
     </style>
 </head>
 <body>
@@ -59,22 +50,17 @@
 <div class="container">
     <h2>🚀 ส่งงาน YouTube</h2>
     <form id="submission-form">
-        <label>เลขที่</label>
-        <input type="number" name="studentNo" placeholder="ระบุเลขที่ของคุณ" required>
-
-        <label>ชื่อ-นามสกุล</label>
-        <input type="text" name="name" placeholder="ระบุชื่อ-นามสกุล" required>
-
-        <label>ลิงก์ YouTube</label>
-        <input type="url" name="youtubeLink" placeholder="https://www.youtube.com/watch?v=..." required>
-
+        <input type="number" name="studentNo" placeholder="เลขที่" required>
+        <input type="text" name="name" placeholder="ชื่อ-นามสกุล" required>
+        <input type="url" name="youtubeLink" placeholder="ลิงก์ YouTube" required>
         <button type="submit" id="submit-btn">ส่งข้อมูล</button>
     </form>
     <div id="message"></div>
 </div>
 
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbw05mS6yUs5tltvTVSANTCm_pVdymi8juozePi4bmT7i2JLXOqteJ73eWWPNDTqXyFQ/exec';
+    // อย่าลืมเอาลิงก์จาก New Deployment มาวางตรงนี้
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxLgfYY8OWNaxwhtjMRUA56ddI_J5xctZDA-as0zCPF-j1AZ84oZjRE8ltua7C6nRiBdQ/exec';
     const form = document.getElementById('submission-form');
     const btn = document.getElementById('submit-btn');
     const msg = document.getElementById('message');
@@ -82,27 +68,19 @@
     form.addEventListener('submit', e => {
         e.preventDefault();
         btn.disabled = true;
-        btn.innerText = 'กำลังส่ง...';
         msg.style.display = 'block';
-        msg.style.color = 'blue';
-        msg.innerText = '⏳ ระบบกำลังบันทึกลง Google Sheets...';
+        msg.innerText = '⏳ กำลังบันทึกตามเลขที่...';
 
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
-                alert('ส่งงานเรียบร้อยแล้ว! ขอบคุณครับ');
+                alert('ส่งงานเรียบร้อย! ข้อมูลจะไปอยู่ที่แถวตามเลขที่ของคุณ');
                 msg.innerText = '✅ บันทึกสำเร็จ!';
-                msg.style.color = 'green';
                 btn.disabled = false;
-                btn.innerText = 'ส่งข้อมูล';
                 form.reset();
             })
             .catch(error => {
-                console.error('Error!', error.message);
-                alert('เกิดข้อผิดพลาด กรุณาลองใหม่');
+                alert('เกิดข้อผิดพลาด');
                 btn.disabled = false;
-                btn.innerText = 'ส่งข้อมูล';
-                msg.innerText = '❌ เกิดข้อผิดพลาด';
-                msg.style.color = 'red';
             });
     });
 </script>
