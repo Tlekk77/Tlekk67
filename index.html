@@ -14,6 +14,44 @@
         button { width: 100%; padding: 12px; background-color: var(--primary-color); color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
         button:hover { background-color: #cc0000; }
         #message { text-align: center; margin-top: 1rem; font-size: 14px; display: none; font-weight: bold; }
+    :root { 
+        --primary-color: #ff0000; 
+        --bg-color: #f4f4f9; 
+    }
+    
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: var(--bg-color); 
+        margin: 0;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        min-height: 100vh;
+        
+        /* --- ส่วนที่เพิ่มรูปซ้าย-ขวา --- */
+        background-image: url('https://scontent.fbkk25-1.fna.fbcdn.net/v/t1.15752-9/626789124_1486551332994234_1024182792052471222_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_ohc=S1i_ughRbJ4Q7kNvwHpKQtB&_nc_oc=Adk0wZcjqmRo7kKvOGq5aSPQSRRTi2YTMlg4EtSPSllPh6bwsATgTomVrIuZQHIyRq5kQYUlLEIYq0qkrGXYtRG-&_nc_zt=23&_nc_ht=scontent.fbkk25-1.fna&oh=03_Q7cD4gHfiaiL6nfVdppyyvx0yFk-u8mCNZRHGHKQaOfj-UYthA&oe=69C7B24B'), url('https://scontent.fbkk25-1.fna.fbcdn.net/v/t1.15752-9/624007086_3542156775931850_3640748888963490407_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_ohc=vhW_Swhhb44Q7kNvwF65T7R&_nc_oc=Adl2RWo3q4LRerF1iCZ0jLtWkS9Zx7Y31C0t3CrRIOsmeqMEoMkE6DcdoLBKVJjkHwqd2zSBL8vCoI4uRNVOQuhb&_nc_zt=23&_nc_ht=scontent.fbkk25-1.fna&oh=03_Q7cD4gEsqBCvql3zsHJcc4ON_ZAktzkTqV6pJbhWPHX5oaqO8g&oe=69C7C505');
+        background-position: left center, right center; /* วางซ้ายและขวาตรงกลางแนวตั้ง */
+        background-repeat: no-repeat, no-repeat;        /* ไม่ให้รูปซ้ำ */
+        background-size: 20%;                           /* ปรับขนาดรูป (เปลี่ยนเลข % ได้) */
+        background-attachment: fixed;                    /* ให้รูปอยู่กับที่เวลาเลื่อนจอ */
+    }
+
+    /* สำหรับมือถือ ให้ซ่อนรูปพื้นหลังเพื่อไม่ให้บังฟอร์ม */
+    @media (max-width: 768px) {
+        body { background-image: none; }
+    }
+
+    .container { 
+        background: rgba(255, 255, 255, 0.95); /* ทำให้โปร่งแสงนิดๆ ให้เห็นพื้นหลัง */
+        padding: 2rem; 
+        border-radius: 12px; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+        width: 100%; 
+        max-width: 400px; 
+        position: relative;
+        z-index: 1;
+    }
+    /* ...โค้ดส่วนอื่นเหมือนเดิม... */
     </style>
 </head>
 <body>
